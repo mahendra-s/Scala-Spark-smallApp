@@ -25,9 +25,9 @@ class MovingAverage(period: Int) {
  */
 object MovingAverageFunction {
   private var queue = new scala.collection.mutable.Queue[Double]()
-  def movingAvg(n: Double)(implicit period: Int): Double = {
+  def movingAvg(n: Double)(implicit movingAvgPeriod: Int): Double = {
     queue.enqueue(n)
-    if (queue.size > period)  queue.dequeue
+    if (queue.size > movingAvgPeriod)  queue.dequeue
     queue.sum / queue.size
   }
   override def toString = queue.mkString("(", ", ", ")")
@@ -43,7 +43,7 @@ object MovingAvg extends App {
 
 
   import MovingAverageFunction._
-  implicit val period: Int = 3
+  implicit val movingAvgPeriod: Int = 3
   val res2 = lst.map(_.toDouble).map(movingAvg)
   MovingAverageFunction.clearQueue
   println(s"Moving averate function $res2")

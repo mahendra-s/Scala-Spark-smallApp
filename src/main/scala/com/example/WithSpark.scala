@@ -20,7 +20,7 @@ object WithSpark extends App {
   //  val lst = textFile.map(_.toDouble)//.map(avg(_))
 
   import MovingAverageFunction._
-  implicit val period: Int = 1
+  implicit val movingAvgPeriod: Int = 1
   val lst = textFile.map(_.toDouble).map(movingAvg)
 
   val ts = Vectors.dense(lst.collect())
