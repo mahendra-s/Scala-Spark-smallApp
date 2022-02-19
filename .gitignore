@@ -1,4 +1,5 @@
 .idea
+.bsp
 /RUNNING_PID
 /logs/
 /project/*-shim.sbt

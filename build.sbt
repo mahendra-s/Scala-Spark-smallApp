@@ -1,18 +1,13 @@
 name := """smallApp"""
 
-version := "1.0"
+version := "1.1"
 
-scalaVersion := "2.11.8"
+scalaVersion := "2.12.8"
 
-// Change this to another test framework if you prefer
-libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.4" % "test"
+libraryDependencies ++=
+  Seq("org.scalactic" %% "scalactic" % "3.2.11",
+    "org.apache.spark" %% "spark-core" % "2.4.8",
+    "org.apache.spark" %% "spark-sql" % "2.4.8",
+    "org.scalatest" %% "scalatest" % "3.2.11" % "test")
 
-libraryDependencies +=  "org.apache.spark" %% "spark-core" % "2.1.0"
-
-libraryDependencies +=  "org.apache.spark" %% "spark-mllib" % "2.1.0"
-
-libraryDependencies += "com.cloudera.sparkts" % "sparkts" % "0.4.0"
-
-// Uncomment to use Akka
-//libraryDependencies += "com.typesafe.akka" %% "akka-actor" % "2.3.11"
 
